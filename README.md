@@ -37,11 +37,16 @@ I contribute to the internals of tools I use — compiler stacks, agent runtimes
 - [PR #500](https://github.com/googleworkspace/cli/pull/500) — Eliminated a TOCTOU race condition in atomic writes: OAuth tokens were briefly world-readable between creation and permission enforcement. Enforced `0o600` atomically at creation, closing the leak window for **~21,000 users**. ![merged](https://img.shields.io/badge/merged-8A2BE2?style=flat-square)
 - [PR #506](https://github.com/googleworkspace/cli/pull/506) — Google Meet integration for `calendar +insert` with deterministic `requestId` hashing — eliminates duplicate Meet links on API retries. ![merged](https://img.shields.io/badge/merged-8A2BE2?style=flat-square)
 - [PR #542](https://github.com/googleworkspace/cli/pull/542) — Fixed silent auth failure: token directory errors were swallowed, credentials silently never persisted while auth appeared to succeed. ![merged](https://img.shields.io/badge/merged-8A2BE2?style=flat-square)
+- [PR #537](https://github.com/googleworkspace/cli/pull/537) — Identified indefinite client hangs on DNS/TCP/TLS handshakes; maintainer rebased and shipped directly as [#608](https://github.com/googleworkspace/cli/pull/608), crediting this PR by name. ![shipped](https://img.shields.io/badge/shipped_via_608-8A2BE2?style=flat-square)
+- [PR #502](https://github.com/googleworkspace/cli/pull/502) — Built a Gmail `+read` helper abstracting MIME tree walking and base64 decoding for clean text extraction, with terminal injection sanitization and JSON output. Maintainer adapted it directly into the merged rollup [#526](https://github.com/googleworkspace/cli/pull/526). ![shipped](https://img.shields.io/badge/shipped_via_526-8A2BE2?style=flat-square)
 
 **[NVIDIA/NemoClaw](https://github.com/NVIDIA/NemoClaw)** — NVIDIA agent security stack, 15k ⭐
 - [PR #187](https://github.com/NVIDIA/NemoClaw/pull/187) — Enforced `0o600` on `openclaw.json` during migration — session and routing config was world-readable by default. Propagated into **3 downstream forks within 13 hours** of merge. ![merged](https://img.shields.io/badge/merged-8A2BE2?style=flat-square)
 - [PR #186](https://github.com/NVIDIA/NemoClaw/pull/186) — `chmod 600` on `.env` at sandbox startup — closed the exposure window before any agent process reads secrets. ![merged](https://img.shields.io/badge/merged-8A2BE2?style=flat-square)
 - [PR #174](https://github.com/NVIDIA/NemoClaw/pull/174) — `chmod 600` on remote `.env` post-SCP during `deploy()` — different attack surface from #186, both were unpatched. ![merged](https://img.shields.io/badge/merged-8A2BE2?style=flat-square)
+- [PR #177](https://github.com/NVIDIA/NemoClaw/pull/177) — Added SHA-256 checksum verification for external binary downloads with per-architecture hashes, version pinning, and `gh attestation` fallback. Maintainer noted this approach is strictly stronger than the competing PR. Approved, pending merge. ![approved](https://img.shields.io/badge/approved-2ea44f?style=flat-square)
+- [PR #171](https://github.com/NVIDIA/NemoClaw/pull/171) — Refactored docker and curl invocations from shell strings to argv arrays, eliminating shell injection vectors across local inference and sandbox flows. ![under review](https://img.shields.io/badge/under_review-e6a817?style=flat-square)
+- [PR #172](https://github.com/NVIDIA/NemoClaw/pull/172) — Identified API key environment pollution leaking across child processes in NemoClaw. Fix was superseded by a stronger architectural solution ([#675](https://github.com/NVIDIA/NemoClaw/pull/675)) that removed the key from the sandbox entirely via gateway-side credential injection — referenced directly in the superseding PR. ![superseded](https://img.shields.io/badge/superseded-grey?style=flat-square)
 
 **[pytorch/pytorch](https://github.com/pytorch/pytorch)** — C++ & Python compiler stack, 63% of global model training
 - [PR #169128](https://github.com/pytorch/pytorch/pull/169128) — Fixed silent data corruption in Inductor C++ kernels: OpenMP + OpenCV together silently produce wrong training outputs. No error thrown. Affects **63% of global model training**. ![approved](https://img.shields.io/badge/approved-2ea44f?style=flat-square)
@@ -59,8 +64,7 @@ I contribute to the internals of tools I use — compiler stacks, agent runtimes
 ### ✨ Highlights
 
 - 🏆 **3rd Place — Splunk Global Hackathon 2025** out of 1,200+ entries — OPA security add-on for real-time threat detection and privilege escalation auditing
-- ⚡ **Celer AI** — voice-to-text pipeline for clinicians, medical report generation from 15 minutes to **40 seconds** (95% reduction)
-- 🛡️ **Trustful** — hallucination detection layer for insurance data extraction using Gemini + Zod validation. A hallucinated policy number in insurance is a liability, not a UX bug.
+- ⚡ **Celer AI** — voice-to-text pipeline for clinicians, medical report generation from 15 minutes to **40 seconds** (95% reduction
 
 ---
 
