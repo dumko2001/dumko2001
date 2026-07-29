@@ -1,83 +1,93 @@
-# Hi, I'm Sidharth 👋
+<div align="center">
 
-I'm a software engineer based in India. I work across the full stack — shipping production AI systems for clients, and contributing fixes to the open-source tools the ML and agent ecosystem runs on.
+# Sidharth Rajmohan
 
-- 🔧 I find correctness bugs, silent failures, and security holes in production codebases and fix them
-- 🤖 I build AI-native products — pipelines, agents, verification systems, clinical tooling
-- 🌏 Open to **full-time remote roles** in Backend, Applied AI, and Full Stack Engineering
+**Trader turned engineer. I build the environments AI agents train inside.**
+
+![Kochi](https://img.shields.io/badge/Kochi-India-2ea44f?style=flat-square)
+![Polymath](https://img.shields.io/badge/Polymath-YC_W26-blue?style=flat-square)
+![RL Environments](https://img.shields.io/badge/focus-RL_environments-8957e5?style=flat-square)
+
+[![GitHub](https://img.shields.io/badge/GitHub-dumko2001-181717?style=flat-square&logo=github)](https://github.com/dumko2001)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-sidharth--rajmohan-0A66C2?style=flat-square&logo=linkedin)](https://www.linkedin.com/in/sidharth-rajmohan/)
+[![Email](https://img.shields.io/badge/Email-dumko.raj@gmail.com-EA4335?style=flat-square&logo=gmail&logoColor=white)](mailto:dumko.raj@gmail.com)
+
+</div>
 
 ---
 
-### 🛠 What I work with
+I've landed fixes in PyTorch and LangChain. These days I build the environments that AI agents train inside. About a year and a half ago I couldn't have opened any of those PRs. I was trading stocks, options, and futures on the Indian market.
+
+> Around January 2025 I pivoted to building software. I already used AI heavily and wanted to make things with it. Think of it as a second internet moment. I rode it hard.
+
+<details>
+<summary><b>&nbsp;How a trader ended up here &nbsp;▾</b></summary>
+
+<br/>
+
+I learned by shipping. An invoice tracker, my first web app. A VC deal-flow tool that sorts startups by what they do. Celer AI, which turns voice into structured medical reports. Alongside that, freelance work for local businesses and friends: websites, feedback trackers, landing pages, small automations.
+
+Open source happened almost by accident. My first PRs landed in LangChain, back in November 2025. Then PyTorch, Kubernetes, LangGraph. A few months later a random fix to Andrej Karpathy's autoresearch got merged, and that was the turning point. People started reaching out. A referral turned into a short gig with a Cambridge professor building benchmarks for rendering efficiency in games. Then Polymath, where I found the work I love.
+
+</details>
+
+---
+
+## 🚀 What I've shipped
+
+Landed and merged, all confirmed in main.
+
+| Project | | Landed work |
+|:--|:--|:--|
+| **[PyTorch](https://github.com/pytorch/pytorch/pulls?q=is%3Apr+author%3Adumko2001)** | | Silent `max_autotune` BMM correctness bug under dynamic OpenMP threads, and an `efficient_conv_bn_eval` crash. Approved by core maintainers jansel and eellison. &nbsp;·&nbsp; [#169128](https://github.com/pytorch/pytorch/pull/169128) [#169126](https://github.com/pytorch/pytorch/pull/169126) |
+| **[LangChain](https://github.com/langchain-ai/langchain)** | | Provider-prefix decoupling in `init_chat_model`, kwargs override for Groq structured output, unsupported-arg fix in `ChatOllama`. &nbsp;·&nbsp; [#34046](https://github.com/langchain-ai/langchain/pull/34046) [#34053](https://github.com/langchain-ai/langchain/pull/34053) [#34114](https://github.com/langchain-ai/langchain/pull/34114) |
+| **[LangGraph](https://github.com/langchain-ai/langgraph)** | | Generic type-argument support for `ToolRuntime` injection. &nbsp;·&nbsp; [#6509](https://github.com/langchain-ai/langgraph/pull/6509) |
+| **[autoresearch](https://github.com/karpathy/autoresearch)** `★ 90.9k` | | Fixed an agent crash blindspot by forcing it to read the traceback before retrying. The turning point. &nbsp;·&nbsp; [#17](https://github.com/karpathy/autoresearch/pull/17) |
+| **[Google Workspace CLI](https://github.com/googleworkspace/cli)** `★ 26.4k` | | Closed a TOCTOU race in atomic writes, added Meet to calendar insert, propagated auth errors on token-dir failure. &nbsp;·&nbsp; [#500](https://github.com/googleworkspace/cli/pull/500) [#506](https://github.com/googleworkspace/cli/pull/506) [#542](https://github.com/googleworkspace/cli/pull/542) |
+| **[NVIDIA/NemoClaw](https://github.com/NVIDIA/NemoClaw)** `★ 20.6k` | | Five security fixes hardening file permissions across deploy, startup, migration, and auth. &nbsp;·&nbsp; [#174](https://github.com/NVIDIA/NemoClaw/pull/174) [#183](https://github.com/NVIDIA/NemoClaw/pull/183) [#186](https://github.com/NVIDIA/NemoClaw/pull/186) [#187](https://github.com/NVIDIA/NemoClaw/pull/187) [#188](https://github.com/NVIDIA/NemoClaw/pull/188) |
+| **[Prime Intellect verifiers](https://github.com/PrimeIntellect-ai/verifiers)** | | Made usage tracking tolerate providers that omit `cache_write_tokens`. &nbsp;·&nbsp; [#2019](https://github.com/PrimeIntellect-ai/verifiers/pull/2019) |
+
+> **PyTorch lands work by rebase, so those two show as "closed" on GitHub. The commits are in main.** Worth knowing when you scan the profile.
+
+Also 17 merged fixes to [clawmetry](https://github.com/vivekchand/clawmetry) (556k+ PyPI downloads): proxy and dashboard concurrency, security, caching.
+
+**In review** across PyTorch (Inductor and CUDA), vLLM, LangGraph, Kubernetes, Supabase, and the Anthropic Claude Agent SDK. &nbsp;[Full PR list →](https://github.com/search?q=author%3Adumko2001+type%3Apr&type=pullrequests)
+
+---
+
+## 🎮 Building RL environments
+
+At Polymath we build the gyms where AI agents train. Simulated worlds for teaching agents real digital work.
+
+> I got asked to build one. I built several. Couldn't stop.
+
+Here's the craft, learned through fast feedback. Make the verifier behavioral, so it grades what the agent actually does. A good environment sits at the exact edge of what a model can do. Tune the difficulty so a strong model lands mid pass-rate. That's where GRPO has signal to climb. The same way people learn at the edge of what they can already do.
+
+---
+
+## 🧠 How I think
+
+`first principles` &nbsp; `Feynman technique` &nbsp; `Pareto` &nbsp; `efficient frontier` &nbsp; `unknown unknowns`
+
+First principles is the one I lean on most. I learn broadly and fast by going deep on whatever grabs me.
+
+## 🛠 Tools I reach for
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=c%2B%2B&logoColor=white)
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Rust](https://img.shields.io/badge/Rust-000000?style=flat-square&logo=rust&logoColor=white)
+![C++](https://img.shields.io/badge/C++-00599C?style=flat-square&logo=cplusplus&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
-![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=flat-square&logo=langchain&logoColor=white)
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
-![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
 
 ---
 
-### 🔨 Open source
+<div align="center">
 
-I contribute to the internals of tools I use — compiler stacks, agent runtimes, LLM frameworks. Here's what I've shipped:
+![Auto-audited](https://img.shields.io/badge/auto--audited_by_AI-monthly-6f42c1?style=flat-square)
 
-**[karpathy/autoresearch](https://github.com/karpathy/autoresearch)** — AI agent framework, 50k ⭐
-- [PR #17](https://github.com/karpathy/autoresearch/pull/17) — Self-healing error recovery: agent parses its own stack traces and resumes from OOM/syntax failures without stopping. Contributed within hours of the repo going public. Shopify's CEO ran it overnight and got **53% faster rendering** from 93 automated commits. ![merged](https://img.shields.io/badge/merged-8A2BE2?style=flat-square)
-- [PR #16](https://github.com/karpathy/autoresearch/pull/16) — Eliminated ~4GB of persistent VRAM overhead per run by switching tanh to native bfloat16 — headroom that matters on a single H100 running 100+ experiments overnight. ![under review](https://img.shields.io/badge/under_review-e6a817?style=flat-square)
+<sub>🤖 An AI agent re-checks every PR's real merge status and refreshes this page each month, so it never goes stale. Contributions verified against GitHub, PyPI, and npm. Last updated July 2026.</sub>
 
-**[googleworkspace/cli](https://github.com/googleworkspace/cli)** — Official Google repo, Rust, 20k ⭐ in 2 weeks
-- [PR #500](https://github.com/googleworkspace/cli/pull/500) — Eliminated a TOCTOU race condition in atomic writes: OAuth tokens were briefly world-readable between creation and permission enforcement. Enforced `0o600` atomically at creation, closing the leak window for **~21,000 users**. ![merged](https://img.shields.io/badge/merged-8A2BE2?style=flat-square)
-- [PR #506](https://github.com/googleworkspace/cli/pull/506) — Google Meet integration for `calendar +insert` with deterministic `requestId` hashing — eliminates duplicate Meet links on API retries. ![merged](https://img.shields.io/badge/merged-8A2BE2?style=flat-square)
-- [PR #542](https://github.com/googleworkspace/cli/pull/542) — Fixed silent auth failure: token directory errors were swallowed, credentials silently never persisted while auth appeared to succeed. ![merged](https://img.shields.io/badge/merged-8A2BE2?style=flat-square)
-- [PR #537](https://github.com/googleworkspace/cli/pull/537) — Identified indefinite client hangs on DNS/TCP/TLS handshakes; maintainer rebased and shipped directly as [#608](https://github.com/googleworkspace/cli/pull/608), crediting this PR by name. ![shipped](https://img.shields.io/badge/shipped_via_608-8A2BE2?style=flat-square)
-- [PR #502](https://github.com/googleworkspace/cli/pull/502) — Built a Gmail `+read` helper abstracting MIME tree walking and base64 decoding for clean text extraction, with terminal injection sanitization and JSON output. Maintainer adapted it directly into the merged rollup [#526](https://github.com/googleworkspace/cli/pull/526). ![shipped](https://img.shields.io/badge/shipped_via_526-8A2BE2?style=flat-square)
-
-**[NVIDIA/NemoClaw](https://github.com/NVIDIA/NemoClaw)** — NVIDIA agent security stack, 15k ⭐
-- [PR #187](https://github.com/NVIDIA/NemoClaw/pull/187) — Enforced `0o600` on `openclaw.json` during migration — session and routing config was world-readable by default. Propagated into **3 downstream forks within 13 hours** of merge. ![merged](https://img.shields.io/badge/merged-8A2BE2?style=flat-square)
-- [PR #186](https://github.com/NVIDIA/NemoClaw/pull/186) — `chmod 600` on `.env` at sandbox startup — closed the exposure window before any agent process reads secrets. ![merged](https://img.shields.io/badge/merged-8A2BE2?style=flat-square)
-- [PR #174](https://github.com/NVIDIA/NemoClaw/pull/174) — `chmod 600` on remote `.env` post-SCP during `deploy()` — different attack surface from #186, both were unpatched. ![merged](https://img.shields.io/badge/merged-8A2BE2?style=flat-square)
-- [PR #177](https://github.com/NVIDIA/NemoClaw/pull/177) — Added SHA-256 checksum verification for external binary downloads with per-architecture hashes, version pinning, and `gh attestation` fallback. Maintainer noted this approach is strictly stronger than the competing PR. Approved, pending merge. ![approved](https://img.shields.io/badge/approved-2ea44f?style=flat-square)
-- [PR #171](https://github.com/NVIDIA/NemoClaw/pull/171) — Refactored docker and curl invocations from shell strings to argv arrays, eliminating shell injection vectors across local inference and sandbox flows. ![under review](https://img.shields.io/badge/under_review-e6a817?style=flat-square)
-- [PR #172](https://github.com/NVIDIA/NemoClaw/pull/172) — Identified API key environment pollution leaking across child processes in NemoClaw. Fix was superseded by a stronger architectural solution ([#675](https://github.com/NVIDIA/NemoClaw/pull/675)) that removed the key from the sandbox entirely via gateway-side credential injection — referenced directly in the superseding PR. ![superseded](https://img.shields.io/badge/superseded-grey?style=flat-square)
-
-**[pytorch/pytorch](https://github.com/pytorch/pytorch)** — C++ & Python compiler stack, 63% of global model training
-- [PR #169128](https://github.com/pytorch/pytorch/pull/169128) — Fixed silent data corruption in Inductor C++ kernels: OpenMP + OpenCV together silently produce wrong training outputs. No error thrown. Affects **63% of global model training**. ![approved](https://img.shields.io/badge/approved-2ea44f?style=flat-square)
-- [PR #169786](https://github.com/pytorch/pytorch/pull/169786) / [#169126](https://github.com/pytorch/pytorch/pull/169126) / [#169788](https://github.com/pytorch/pytorch/pull/169788) — `torch.compile` crashes on nested autograd, Conv+BatchNorm FX graph failures, silent `index_select` out-of-bounds corruption — across **~1.57B pip installs**. ![under review](https://img.shields.io/badge/under_review-e6a817?style=flat-square)
-
-**[langchain-ai/langchain](https://github.com/langchain-ai/langchain) & [langgraph](https://github.com/langchain-ai/langgraph)** — LLM frameworks, used by Replit, Uber, LinkedIn, GitLab
-- [PR #6509](https://github.com/langchain-ai/langgraph/pull/6509) — Fixed validation crash blocking Generic type hint injection in LangGraph — unblocked `ToolRuntime[Context]` patterns in typed agent pipelines. ![merged](https://img.shields.io/badge/merged-8A2BE2?style=flat-square)
-- [PR #34046](https://github.com/langchain-ai/langchain/pull/34046) / [#34053](https://github.com/langchain-ai/langchain/pull/34053) / [#34114](https://github.com/langchain-ai/langchain/pull/34114) — Fixed silent tool-calling failures across Mistral, Groq, and Ollama. TypeErrors that caused agent workflows to silently stop on provider switch. **~500k developers monthly.** ![merged](https://img.shields.io/badge/merged-8A2BE2?style=flat-square)
-
-**[kubernetes/kubernetes](https://github.com/kubernetes/kubernetes)** — Go, 5.6M developers, 3M+ production clusters
-- [PR #135460](https://github.com/kubernetes/kubernetes/pull/135460) — Modernizing the Device Resource Allocation (DRA) API: migrating `DeviceTaint` and `AllocatedDeviceStatus` to declarative API markers across **~3M production clusters**. ![under review](https://img.shields.io/badge/under_review-e6a817?style=flat-square)
-
----
-
-### ✨ Highlights
-
-- 🏆 **3rd Place — Splunk Global Hackathon 2025** out of 1,200+ entries — OPA security add-on for real-time threat detection and privilege escalation auditing
-- ⚡ **Celer AI** — voice-to-text pipeline for clinicians, medical report generation from 15 minutes to **40 seconds** (95% reduction
-
----
-
-### 📊 Stats
-
-<p align="left">
-  <img src="https://github-readme-stats.vercel.app/api?username=dumko2001&show_icons=true&theme=tokyonight&hide_border=true&count_private=true" />
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=dumko2001&layout=compact&theme=tokyonight&hide_border=true&langs_count=6" />
-</p>
-
----
-
-### 📬 Connect
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-sidharth--rajmohan-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://linkedin.com/in/sidharth-rajmohan)
-[![Email](https://img.shields.io/badge/Email-dumko.raj@gmail.com-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:dumko.raj@gmail.com)
+</div>
