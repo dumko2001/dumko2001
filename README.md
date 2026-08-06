@@ -18,7 +18,7 @@
 
 I've landed fixes in PyTorch and LangChain. These days I build the environments that AI agents train inside. About a year and a half ago I couldn't have opened any of those PRs. I was trading stocks, options, and futures on the Indian market.
 
-> Around January 2025 I pivoted to building software. I already used AI heavily and wanted to make things with it. Think of it as a second internet moment. I rode it hard.
+> Around January 2025 I pivoted to building software. I already used AI heavily and wanted to make things with it. Think of it as a second internet moment. I am riding it hard.
 
 <details>
 <summary><b>&nbsp;How a trader ended up here &nbsp;▾</b></summary>
